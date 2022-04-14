@@ -1,100 +1,114 @@
+--Animals: 
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 20, 3, 'Beran', 3, m);
+values (4, 12, 14, 'Malte', 2, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 3, 2, 'Aleyna', 6, m);
+values (1, 14, 10, 'Sabri', 10, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 11, 0, 'Ylvie', 14, m);
+values (3, 5, 10, 'Alea', 24, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 13, 5, 'Eliana', 11, m);
+values (0, 5, 1, 'Mai', 11, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 3, 2, 'Huy', 24, w);
+values (2, 23, 13, 'Tom', 11, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 3, 0, 'Rania', 8, w);
+values (3, 21, 1, 'Kristina', 20, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 6, 4, 'Çınar', 11, w);
+values (1, 11, 9, 'Maxi', 14, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 11, 1, 'Paolo', 13, m);
+values (2, 5, 14, 'Mert', 10, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 24, 10, 'Anno', 14, w);
+values (2, 3, 2, 'Gerhard', 14, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 6, 1, 'Jannis', 9, m);
+values (2, 14, 8, 'Elly', 3, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 0, 14, 'Ramiz', 3, m);
+values (4, 20, 13, 'Wilhelm', 1, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 9, 0, 'Kai', 6, w);
+values (1, 3, 7, 'Käthe', 12, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 18, 11, 'Julia', 18, w);
+values (4, 23, 8, 'Milo', 11, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 21, 12, 'Walter', 5, w);
+values (3, 14, 1, 'Darian', 6, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 17, 11, 'Julina', 23, m);
+values (0, 24, 13, 'Baran', 11, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (4, 19, 14, 'Siegfried', 18, w);
+values (3, 11, 11, 'Lewis', 23, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 1, 13, 'Sebastian', 23, m);
+values (3, 15, 13, 'Noa', 10, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 18, 8, 'Ebrar', 5, m);
+values (0, 2, 10, 'Asli', 7, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 20, 12, 'Maila', 14, m);
+values (4, 15, 6, 'Volker', 15, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 6, 0, 'Isabel', 20, m);
+values (3, 11, 4, 'Manfred', 14, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 22, 2, 'Marika', 19, m);
+values (4, 10, 11, 'Michelle', 11, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 3, 4, 'Antonio', 16, w);
+values (1, 10, 3, 'Marwa', 14, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 15, 12, 'Angelo', 13, m);
+values (2, 18, 10, 'Hannes', 9, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 15, 10, 'Sandy', 16, w);
+values (0, 22, 11, 'Carolina', 10, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 13, 1, 'Malte', 24, m);
+values (3, 16, 11, 'Ikram', 19, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (4, 1, 13, 'Melia', 16, m);
+values (2, 21, 9, 'Lisa-Marie', 17, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 22, 4, 'Moses', 12, w);
+values (0, 7, 10, 'Angela', 5, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 4, 1, 'Tom', 24, w);
+values (4, 6, 0, 'Elmar', 16, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 13, 8, 'Kurt', 11, w);
+values (4, 7, 9, 'Michel', 16, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 24, 5, 'Ariana', 10, m);
+values (4, 10, 9, 'Robyn', 4, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 8, 0, 'Alpay', 24, m);
+values (1, 2, 9, 'Sude', 22, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (4, 4, 10, 'Ali', 2, w);
+values (1, 16, 0, 'Lee', 2, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 2, 10, 'Lilli', 22, m);
+values (3, 20, 0, 'Kenny', 17, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 18, 7, 'Nova', 13, w);
+values (3, 12, 12, 'Safiya', 6, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 12, 11, 'Merit', 22, w);
+values (0, 18, 8, 'Josefin', 2, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 1, 3, 'Benita', 5, m);
+values (2, 14, 13, 'Julie', 6, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (4, 23, 12, 'Kristian', 16, w);
+values (3, 1, 8, 'Margarethe', 24, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 24, 12, 'Noelie', 8, m);
+values (2, 23, 14, 'Melek', 23, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 18, 8, 'Joy', 16, w);
+values (4, 19, 1, 'Lino', 10, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 1, 1, 'Janna', 13, m);
+values (2, 9, 2, 'Jessy', 2, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (4, 3, 1, 'Len', 1, m);
+values (0, 7, 0, 'Matti', 24, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 10, 9, 'Najla', 4, w);
+values (3, 10, 3, 'Cornelia', 22, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 10, 14, 'Hawa', 14, w);
+values (2, 22, 7, 'Lorenz', 3, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 7, 6, 'Elmar', 18, w);
+values (0, 6, 8, 'Liv', 18, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 10, 8, 'Muhammed', 11, m);
+values (3, 9, 0, 'Wilma', 14, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (2, 10, 7, 'Julina', 7, m);
+values (4, 8, 3, 'Giada', 1, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (0, 23, 11, 'Eymen', 18, m);
+values (3, 21, 5, 'Kara', 13, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (4, 16, 12, 'Alyssa', 4, w);
+values (3, 19, 1, 'Judit', 20, 'm');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (1, 15, 1, 'Wolfgang', 21, m);
+values (3, 9, 9, 'Enrico', 21, 'w');
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
-values (3, 3, 4, 'Aslı', 10, w);
+values (1, 13, 7, 'Jean', 11, 'm');
+
+--Zoos: 
+insert into "Zoo"("name", "address")
+values ('Selim-Zoo', 'Ian-Straße 102');
+insert into "Zoo"("name", "address")
+values ('Katarina-Zoo', 'Cennet-Straße 53');
+insert into "Zoo"("name", "address")
+values ('Thammarat-Zoo', 'Noelia-Straße 3');
+insert into "Zoo"("name", "address")
+values ('Eymen-Zoo', 'Lotte-Straße 131');
+insert into "Zoo"("name", "address")
+values ('Ramazan-Zoo', 'Berke-Straße 109');
+

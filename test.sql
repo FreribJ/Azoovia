@@ -1,1 +1,1 @@
-Select * from Cars
+SELECT * From test

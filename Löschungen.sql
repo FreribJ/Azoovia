@@ -1,1 +1,12 @@
-drop table test;
+drop table if exists "Animal";
+drop table if exists "Habitat";
+drop table if exists "Enclosure";
+drop table if exists "Species";
+drop table if exists "FeedingPlan";
+drop table if exists "Feed";
+drop table if exists "Employee";
+drop table if exists "Job";
+drop table if exists "Zoo";
+drop table if exists "Ticket";
+drop table if exists "TicketType";
+drop table if exists "Visitor";

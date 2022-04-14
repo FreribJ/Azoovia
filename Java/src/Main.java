@@ -368,7 +368,7 @@ public class Main {
         sb.append("""
                 insert into "Ticket"("visitor_id", "zoo_id", "ticketType_id", "validityDate")
                 values (""");
-        sb.append(getRandomID(anzahlTickets) + ", ");
+        sb.append(getRandomID(anzahlVisitor) + ", ");
         sb.append(getRandomID(anzahlZoos) + ", ");
         sb.append(getRandomID(anzahlTickettypes) + ", ");
         sb.append("'" + (random.nextInt(30) + 1990) + "-" + (random.nextInt(12) + 1) + "-" + (random.nextInt(28) + 1) + "'");
@@ -385,7 +385,7 @@ public class Main {
         sb.append(getRandomID(anzahlAnimals) + ", ");
         sb.append(getRandomID(anzahlFeed) + ", ");
         sb.append(getRandomID(anzahlEmployees) + ", ");
-        sb.append("'" + (random.nextInt(24) + 1) + ":" + random.nextInt(60) + ":00" + "'" + ", ");
+        sb.append("'" + (random.nextInt(23) + 1) + ":" + random.nextInt(60) + ":00" + "'" + ", ");
         sb.append(random.nextInt(50));
         sb.append(");\n");
 

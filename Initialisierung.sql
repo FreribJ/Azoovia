@@ -1,3 +1,4 @@
+--insert into "Animal"("idAnimal","zoo_id", "enclosure_id", "species_id","name", "age", "sex") values (1,1,4,5, 'Leon', 20, 'male');
 create table "Animal"
 (
     "idAnimal"     serial primary key,
@@ -8,6 +9,7 @@ create table "Animal"
     "age"          integer not null,
     "sex"          varchar(1) not null
 );
+--insert into "Habitat"("idHabitat","zoo_id", "enclosure_id", "species_id","name", "age", "sex") values (1,1,4,5, 'Leon', 20, 'male');
 
 create table "Habitat"
 (

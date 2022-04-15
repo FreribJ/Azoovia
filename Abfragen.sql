@@ -15,3 +15,4 @@ full join "FeedingPlan" on "idAnimal" = "FeedingPlan"."animal_id";
 select "Visitor"."firstname", "Visitor"."lastname", "Ticket"."idTicket"
 from "Ticket"
 full join "Visitor" on "Ticket".visitor_id = "Visitor"."idVisitor"
+

@@ -23,10 +23,10 @@ public class Main {
     static int anzahlZoos = 5;
     static int anzahlEnclosure = 25;
     static int anzahlAnimals = 25;
-    static int anzahlTickets = 20;
-    static int anzahlEmployees = 30;
-    static int anzahlVisitor = 10;
-    static int anzahlFeedingPlans = 20;
+    static int anzahlVisitor = 20;
+    static int anzahlExtraEmployees = 10; //Jeder Zoo hat mind. ein Angestellten
+    static int anzahlExtraTickets = 5; //Jeder Besucher hat mind. ein Ticket
+    static int anzahlExtraFeedingPlans = 10; //Jedes Tier hat mind. ein Plan
 
     //evtl. festgelegt:
     static int anzahlSpecies;
@@ -104,7 +104,10 @@ public class Main {
 
         sb.append("--Employee: \n");
         {
-            for (int i = 0; i < anzahlEmployees; i++) {
+            for (int i = 1; i <= anzahlZoos; i++) {
+                sb.append(Employee(i));
+            }
+            for (int i = 0; i < anzahlExtraEmployees; i++) {
                 sb.append(Employee());
             }
             sb.append("\n");
@@ -112,7 +115,10 @@ public class Main {
 
         sb.append("--FeedingPlans: \n");
         {
-            for (int i = 0; i < anzahlFeedingPlans; i++) {
+            for (int i = 1; i <= anzahlAnimals; i++) {
+                sb.append(FeedingPlan(i));
+            }
+            for (int i = 0; i < anzahlExtraFeedingPlans; i++) {
                 sb.append(FeedingPlan());
             }
             sb.append("\n");
@@ -136,7 +142,10 @@ public class Main {
 
         sb.append("--Tickets: \n");
         {
-            for (int i = 0; i < anzahlTickets; i++) {
+            for (int i = 1; i <= anzahlVisitor; i++) {
+                sb.append(Ticket(i));
+            }
+            for (int i = 0; i < anzahlExtraTickets; i++) {
                 sb.append(Ticket());
             }
             sb.append("\n");
@@ -305,11 +314,14 @@ public class Main {
     }
 
     public static String Employee() {
+        return Employee(getRandomID(anzahlZoos));
+    }
+    public static String Employee(int i) {
         StringBuilder sb = new StringBuilder();
         sb.append("""
                 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
                 values (""");
-        sb.append(getRandomID(anzahlZoos) + ", ");
+        sb.append(i + ", ");
         sb.append(getRandomID(anzahlJobs) + ", ");
         String firstName = getRandomNamen(Vornamen);
         sb.append(firstName + ", ");
@@ -364,11 +376,15 @@ public class Main {
     }
 
     public static String Ticket() {
+        return Ticket(getRandomID(anzahlVisitor));
+    }
+
+    public static String Ticket(int i) {
         StringBuilder sb = new StringBuilder();
         sb.append("""
                 insert into "Ticket"("visitor_id", "zoo_id", "ticketType_id", "validityDate")
                 values (""");
-        sb.append(getRandomID(anzahlVisitor) + ", ");
+        sb.append(i + ", ");
         sb.append(getRandomID(anzahlZoos) + ", ");
         sb.append(getRandomID(anzahlTickettypes) + ", ");
         sb.append("'" + (random.nextInt(30) + 1990) + "-" + (random.nextInt(12) + 1) + "-" + (random.nextInt(28) + 1) + "'");
@@ -378,13 +394,17 @@ public class Main {
     }
 
     public static String FeedingPlan() {
+        return FeedingPlan(getRandomID(anzahlAnimals));
+    }
+
+    public static String FeedingPlan(int i) {
         StringBuilder sb = new StringBuilder();
         sb.append("""
                 insert into "FeedingPlan"("animal_id", "feed_id", "employee_id", "time", "amount")
                 values (""");
-        sb.append(getRandomID(anzahlAnimals) + ", ");
+        sb.append(i + ", ");
         sb.append(getRandomID(anzahlFeed) + ", ");
-        sb.append(getRandomID(anzahlEmployees) + ", ");
+        sb.append(getRandomID(anzahlExtraEmployees) + ", ");
         sb.append("'" + (random.nextInt(23) + 1) + ":" + random.nextInt(60) + ":00" + "'" + ", ");
         sb.append(random.nextInt(50));
         sb.append(");\n");

@@ -197,6 +197,7 @@ public class Main {
     public static void straßenEinlesen() throws FileNotFoundException {
         File namesFile = new File("data/Straßen.csv");
         Scanner sc = new Scanner(namesFile);
+        sc.useDelimiter("\n");
         while (sc.hasNext()) {
             Straßen.add(sc.next());
         }
@@ -330,8 +331,11 @@ public class Main {
         String str = getRandomNamen(Straßen);
         sb.append(str.substring(0, str.length() - 1) + " " + (random.nextInt(200) + 1) + "'" + ", ");
         sb.append(firstName.substring(0, firstName.length() - 1) + "." + lastName.substring(1, lastName.length() - 1) + "@hsw-stud.de" + "'" + ", ");
-        sb.append(getRandomAge(25) + ", ");
-        sb.append("'" + (random.nextInt(70) + 1950) + "-" + (random.nextInt(12) + 1) + "-" + (random.nextInt(28) + 1) + "'");
+
+        int alter  = getRandomAge(60) + 18;
+        int datum = 2021 - random.nextInt(alter - 18);
+        sb.append(alter + ", ");
+        sb.append("'" + datum + "-" + (random.nextInt(12) + 1) + "-" + (random.nextInt(28) + 1) + "'");
         sb.append(");\n");
 
         return sb.toString();
@@ -344,7 +348,7 @@ public class Main {
                 values (""");
         sb.append(getRandomNamen(Vornamen) + ", ");
         sb.append(getRandomNamen(Nachnamen) + ", ");
-        sb.append(getRandomAge(25));
+        sb.append(getRandomAge(80));
         sb.append(");\n");
 
         return sb.toString();

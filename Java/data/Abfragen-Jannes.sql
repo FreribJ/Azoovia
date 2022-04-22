@@ -6,4 +6,4 @@ WHERE "validityDate" > TO_DATE('2010-01-01', 'YYYY-MM-DD')
 group by TT."name";
 
 --Ausgaben - Einnahmen Gegenrechnung
-SELECT
+SELECT test

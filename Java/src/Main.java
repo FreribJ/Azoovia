@@ -373,7 +373,7 @@ public class Main {
         sb.append("""
                 insert into "Enclosure"("habitat_id", "area")
                 values (""");
-        sb.append(getRandomID(anzahlEnclosure) + ", ");
+        sb.append(getRandomID(anzahlHabitats) + ", ");
         sb.append("'" + random.nextInt(150) + 50 + "'");
         sb.append(");\n");
 

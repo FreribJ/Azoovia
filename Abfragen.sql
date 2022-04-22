@@ -14,5 +14,11 @@ full join "FeedingPlan" on "idAnimal" = "FeedingPlan"."animal_id";
 --Tickets
 select "Visitor"."firstname", "Visitor"."lastname", "Ticket"."idTicket"
 from "Ticket"
-full join "Visitor" on "Ticket".visitor_id = "Visitor"."idVisitor"
+full join "Visitor" on "Ticket".visitor_id = "Visitor"."idVisitor";
+
+--TopTicket
+select Z."name", TT."name", sum(T."idTicket") AS "SummeInEuro"
+From ("Zoo" Z inner join "Ticket" T on "idZoo" = T."zoo_id") inner join "TicketType" TT on TT."idTicketType" = T."ticketType_id"
+GROUP BY  Z."name" ,TT."name"
+ORDER BY Z."name", TT.name;
 

@@ -22,7 +22,7 @@ public class Main {
 
     static int anzahlZoos = 5;
     static int anzahlEnclosure = 25;
-    static int anzahlAnimals = 25;
+    static int anzahlAnimals = 100;
     static int anzahlVisitor = 20;
     static int anzahlExtraEmployees = 10; //Jeder Zoo hat mind. ein Angestellten
     static int anzahlExtraTickets = 5; //Jeder Besucher hat mind. ein Ticket
@@ -371,8 +371,9 @@ public class Main {
     public static String Enclosure() {
         StringBuilder sb = new StringBuilder();
         sb.append("""
-                insert into "Enclosure"("area")
+                insert into "Enclosure"("habitat_id", "area")
                 values (""");
+        sb.append(getRandomID(anzahlEnclosure) + ", ");
         sb.append("'" + random.nextInt(150) + 50 + "'");
         sb.append(");\n");
 

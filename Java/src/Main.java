@@ -22,11 +22,11 @@ public class Main {
 
     static int anzahlZoos = 5;
     static int anzahlEnclosure = 25;
-    static int anzahlAnimals = 100;
-    static int anzahlVisitor = 20;
-    static int anzahlExtraEmployees = 10; //Jeder Zoo hat mind. ein Angestellten
-    static int anzahlExtraTickets = 5; //Jeder Besucher hat mind. ein Ticket
-    static int anzahlExtraFeedingPlans = 10; //Jedes Tier hat mind. ein Plan
+    static int anzahlAnimals = 75;
+    static int anzahlVisitor = 200;
+    static int anzahlExtraEmployees = 20; //Jeder Zoo hat mind. ein Angestellten
+    static int anzahlExtraTickets = 20; //Jeder Besucher hat mind. ein Ticket
+    static int anzahlExtraFeedingPlans = 20; //Jedes Tier hat mind. ein Plan
 
     //evtl. festgelegt:
     static int anzahlSpecies;

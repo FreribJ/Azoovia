@@ -199,7 +199,7 @@ public class Main {
         Scanner sc = new Scanner(namesFile);
         sc.useDelimiter("\n");
         while (sc.hasNext()) {
-            Straßen.add(sc.next());
+            Straßen.add(sc.next().stripTrailing());
         }
         sc.close();
     }

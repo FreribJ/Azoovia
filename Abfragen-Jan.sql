@@ -1,5 +1,5 @@
 --Essen pro Gehege
-SELECT "idEnclosure", sum(FP.amount) FROM "Enclosure"
+SELECT "idEnclosure", sum(FP.amount) AS feed_amount FROM "Enclosure"
 JOIN "Animal" A on "Enclosure"."idEnclosure" = A.enclosure_id
 JOIN "FeedingPlan" FP on A."idAnimal" = FP.animal_id
 GROUP BY "idEnclosure"

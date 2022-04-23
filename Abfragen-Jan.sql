@@ -11,3 +11,9 @@ JOIN "Animal" A on A."idAnimal" = "FeedingPlan".animal_id
 JOIN "Species" S on S."idSpecies" = A.species_id
 GROUP BY S.name
 ORDER BY average DESC;
+
+--Platz pro Tier im Gehege
+SELECT "idEnclosure", round(area/count(A), 2) AS area_per_animal FROM "Enclosure"
+JOIN "Animal" A on "Enclosure"."idEnclosure" = A.enclosure_id
+GROUP BY "idEnclosure"
+ORDER BY "idEnclosure";

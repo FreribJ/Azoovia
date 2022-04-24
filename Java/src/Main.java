@@ -167,9 +167,6 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         sb.append("--Tickets: \n");
         {
-            for (int i = 1; i <= anzahlVisitor; i++) {
-                sb.append(Ticket(i));
-            }
             for (int i = 0; i < anzahl; i++) {
                 sb.append(Ticket());
             }

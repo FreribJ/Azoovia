@@ -28,3 +28,11 @@ FROM "Zoo"
          JOIN ZooEinnahmen ZE on "Zoo"."idZoo" = ZE."idZoo"
          JOIN ZooAusgabenFutter ZAF on "Zoo"."idZoo" = ZAF."idZoo"
          JOIN ZooAusgabenPersonal ZAP on "Zoo"."idZoo" = ZAP."idZoo";
+
+--Tests
+SELECT Z."idZoo", sum(TT.price) as "Einnahmen"
+                      FROM "Ticket"
+                               JOIN "TicketType" TT on TT."idTicketType" = "Ticket"."ticketType_id"
+                               JOIN "Zoo" Z on Z."idZoo" = "Ticket".zoo_id
+                      WHERE "validityDate" BETWEEN TO_DATE('2019-01-01', 'YYYY-MM-DD') and TO_DATE('2020-01-01', 'YYYY-MM-DD')
+                      group by Z."idZoo"

@@ -412,7 +412,7 @@ public class Main {
         sb.append(i + ", ");
         sb.append(getRandomID(anzahlZoos) + ", ");
         sb.append(getRandomID(anzahlTickettypes) + ", ");
-        sb.append("'" + (random.nextInt(30) + 1990) + "-" + (random.nextInt(12) + 1) + "-" + (random.nextInt(28) + 1) + "'");
+        sb.append("'" + (random.nextInt(22) + 2000) + "-" + (random.nextInt(12) + 1) + "-" + (random.nextInt(28) + 1) + "'");
         sb.append(");\n");
 
         return sb.toString();

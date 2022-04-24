@@ -38,7 +38,16 @@ public class Main {
     public static void main(String[] args) throws IOException {
         datenEinlesen();
 
-        String code = codeErzeugen();
+        String code = "Falsche Auswahl";
+
+        String auswahl = "Mehr Tickets";
+        switch (auswahl) {
+            case "Neue Werte":
+                code = codeErzeugen();
+                break;
+            case "Mehr Tickets":
+                code = mehrTicketsErzeugen(1000);
+        }
 
         outputSchreiben(code);
     }
@@ -154,6 +163,20 @@ public class Main {
         return sb.toString();
     }
 
+    public static String mehrTicketsErzeugen(int anzahl) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("--Tickets: \n");
+        {
+            for (int i = 1; i <= anzahlVisitor; i++) {
+                sb.append(Ticket(i));
+            }
+            for (int i = 0; i < anzahl; i++) {
+                sb.append(Ticket());
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
     public static void outputSchreiben(String output) throws IOException {
         Writer fileWriter = new FileWriter("data/Output.sql", false);
         fileWriter.write(output);
@@ -411,7 +434,7 @@ public class Main {
         sb.append(getRandomID(anzahlFeed) + ", ");
         sb.append(getRandomID(anzahlExtraEmployees) + ", ");
         sb.append("'" + (random.nextInt(23) + 1) + ":" + random.nextInt(60) + ":00" + "'" + ", ");
-        sb.append(random.nextInt(50));
+        sb.append(random.nextInt(3) + 1);
         sb.append(");\n");
 
         return sb.toString();
@@ -461,7 +484,7 @@ public class Main {
                 insert into "TicketType"("name", "price")
                 values (""");
         sb.append(getName(Tickettypen, i) + ", ");
-        sb.append(random.nextInt(20) + 5);
+        sb.append(random.nextInt(200) + 5);
         sb.append(");\n");
 
         return sb.toString();

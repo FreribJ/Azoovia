@@ -1,3 +1,3 @@
-UPDATE "FeedingPlan"
-SET amount = 1.4
-WHERE "idFeedingPlan" = 1
+UPDATE "TicketType"
+SET price = 230
+WHERE "idTicketType" = 2

@@ -23,7 +23,7 @@ WITH ZooEinnahmen AS (SELECT Z."idZoo", sum(TT.price) as "Einnahmen"
                                       JOIN "Job" J on J."idJob" = "Employee".job_id
                                       JOIN "Zoo" Z on Z."idZoo" = "Employee".zoo_id
                              group by Z."idZoo")
-SELECT "Zoo"."name", ZE."Einnahmen" - ZAF."FutterAusgaben" - ZAP."PersonalAusgaben" as gewinn
+SELECT "Zoo"."name", ZE."Einnahmen", ZAF."FutterAusgaben", ZAP."PersonalAusgaben", ZE."Einnahmen" - ZAF."FutterAusgaben" - ZAP."PersonalAusgaben" as gewinn
 FROM "Zoo"
          JOIN ZooEinnahmen ZE on "Zoo"."idZoo" = ZE."idZoo"
          JOIN ZooAusgabenFutter ZAF on "Zoo"."idZoo" = ZAF."idZoo"

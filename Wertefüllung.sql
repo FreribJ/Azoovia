@@ -1,3 +1,3 @@
 UPDATE "TicketType"
-SET price = 230
-WHERE "idTicketType" = 2
+SET price = 250
+WHERE "idTicketType" = 3

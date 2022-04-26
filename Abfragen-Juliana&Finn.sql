@@ -15,5 +15,10 @@ ORDER BY "EinnahmenTickets"."Zooname", "SummeInEuro" DESC;
 --Welcher Tierpfleger betreut wie viele Tiere
 Select E.firstname, E.lastname, E."idEmployee", count(A."idAnimal")
 from  ("Employee" E join "FeedingPlan" FP on E."idEmployee" = FP.employee_id)  join "Animal" A on A."idAnimal" = FP.animal_id
-Where E.job_id = 1
+Where E.job_id = 2
 GROUP BY E.firstname, E.lastname, E."idEmployee";
+
+-- Pro Species die Kosten des Essens pro Tag
+Select S.name, sum (F.price*FP.amount)
+From (("Species" S Join "Animal" A on S."idSpecies" = A.species_id) join "FeedingPlan" FP on "idAnimal" = FP.animal_id) Join "Feed" F on F."idFeed" = FP.feed_id
+group by S.name;

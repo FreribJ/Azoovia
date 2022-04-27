@@ -1,5 +1,5 @@
 -- Artgerechtheit
-SELECT A."name", H1."name" AS EnclosureHabitat, H2."name" AS SpeciesHabitat, H1."idHabitat" = H2."idHabitat" AS SpeciesAppropriate
+SELECT A."name", H1."name" AS Enclosure_Habitat, H2."name" AS Species_Habitat, H1."idHabitat" = H2."idHabitat" AS Species_Appropriate
 FROM "Animal" A
 JOIN "Enclosure" E ON E."idEnclosure" = A.enclosure_id
 JOIN "Habitat" H1 ON E.habitat_id = H1."idHabitat"
@@ -7,7 +7,7 @@ JOIN "Species" S ON S."idSpecies" = A.species_id
 JOIN "Habitat" H2 ON S.habitat_id = H2."idHabitat";
 
 -- Artgerechtheit II
-SELECT A."name", H1."name" AS EnclosureHabitat, H2."name" AS SpeciesHabitat, H1."idHabitat" = H2."idHabitat" AS SpeciesAppropriate, A.zoo_id
+SELECT A."name", H1."name" AS Enclosure_Habitat, H2."name" AS Species_Habitat, H1."idHabitat" = H2."idHabitat" AS Species_Appropriate, A.zoo_id
 FROM "Animal" A
 JOIN "Enclosure" E ON E."idEnclosure" = A.enclosure_id
 JOIN "Habitat" H1 ON E.habitat_id = H1."idHabitat"

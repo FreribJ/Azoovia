@@ -687,4 +687,3 @@ insert into "Ticket"("visitor_id", "zoo_id", "ticketType_id", "validityDate")
 values (16, 5, 2, '2004-6-12');
 insert into "Ticket"("visitor_id", "zoo_id", "ticketType_id", "validityDate")
 values (18, 3, 1, '1994-4-13');
-

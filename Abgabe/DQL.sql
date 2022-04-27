@@ -123,4 +123,4 @@ FROM "Animal" A
          JOIN "Zoo" Z on A.zoo_id = Z."idZoo"
 WHERE H1."idHabitat" = H2."idHabitat"
 group by Z."name"
-ORDER BY Species_appropriately_held_animals ASC;
+ORDER BY Species_appropriately_held_animals;

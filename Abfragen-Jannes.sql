@@ -1,4 +1,4 @@
---Wie viele tickets wurden im letzen jahr verkauft
+--Wie viele tickets wurden seit 2019 verkauft, nach Art des Tickets
 SELECT TT."name", COUNT("Ticket") as Anzahl
 FROM "Ticket"
          JOIN "TicketType" TT on TT."idTicketType" = "Ticket"."ticketType_id"
@@ -9,7 +9,7 @@ group by TT."name";
 WITH ZooEinnahmen AS (SELECT "zoo_id", sum(TT.price) as "Einnahmen"
                       FROM "Ticket"
                                JOIN "TicketType" TT on TT."idTicketType" = "Ticket"."ticketType_id"
-                      WHERE "validityDate" BETWEEN TO_DATE('1990-01-01', 'YYYY-MM-DD') and TO_DATE('2020-01-01', 'YYYY-MM-DD')
+                      WHERE "validityDate" BETWEEN TO_DATE('2019-01-01', 'YYYY-MM-DD') and TO_DATE('2020-01-01', 'YYYY-MM-DD')
                       group by "zoo_id"),
      ZooAusgabenFutter AS (SELECT "zoo_id", sum(F.price * "FeedingPlan".amount * 356) as "FutterAusgaben"
                            FROM "FeedingPlan"
@@ -25,11 +25,3 @@ FROM "Zoo"
          JOIN ZooEinnahmen ZE on "Zoo"."idZoo" = ZE."zoo_id"
          JOIN ZooAusgabenFutter ZAF on "Zoo"."idZoo" = ZAF."zoo_id"
          JOIN ZooAusgabenPersonal ZAP on "Zoo"."idZoo" = ZAP."zoo_id";
-
---Tests
-SELECT Z."idZoo", sum(TT.price) as "Einnahmen"
-                      FROM "Ticket"
-                               JOIN "TicketType" TT on TT."idTicketType" = "Ticket"."ticketType_id"
-                               JOIN "Zoo" Z on Z."idZoo" = "Ticket".zoo_id
-                      WHERE "validityDate" BETWEEN TO_DATE('2019-01-01', 'YYYY-MM-DD') and TO_DATE('2020-01-01', 'YYYY-MM-DD')
-                      group by Z."idZoo"

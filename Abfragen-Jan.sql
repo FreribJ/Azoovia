@@ -17,3 +17,10 @@ SELECT "idEnclosure", round(area/count(A), 2) AS area_per_animal FROM "Enclosure
 JOIN "Animal" A on "Enclosure"."idEnclosure" = A.enclosure_id
 GROUP BY "idEnclosure"
 ORDER BY "idEnclosure";
+
+--Einnahmen pro Alter
+SELECT age, sum(TT.price) FROM "Visitor"
+JOIN "Ticket" T on "Visitor"."idVisitor" = T.visitor_id
+JOIN "TicketType" TT on TT."idTicketType" = T."ticketType_id"
+GROUP BY age
+ORDER BY age;

@@ -38,16 +38,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         datenEinlesen();
 
-        String code = "Falsche Auswahl";
-
-        String auswahl = "Mehr Tickets";
-        switch (auswahl) {
-            case "Neue Werte":
-                code = codeErzeugen();
-                break;
-            case "Mehr Tickets":
-                code = mehrTicketsErzeugen(1000);
-        }
+        String code = codeErzeugen();
 
         outputSchreiben(code);
     }

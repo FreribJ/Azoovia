@@ -1,5 +1,7 @@
 -- Artgerechtheit
-SELECT "idZoo",
-from "Species", "Enclosure", "Animal", "Zoo"
-where "Species"."habitat_id" = "Enclosure".""habitat_id"
-group by
+SELECT "idAnimal"
+from "Species", "Enclosure", "Animal"
+where "Animal"."enclosure_id"
+AND "Enclosure"."habitat_id" = "Species"."habitat_id"
+group by "idAnimal"
+order by "idAnimal" ASC;

@@ -1,27 +1,27 @@
 --Jannes
 --Wie viele tickets wurden seit 2019 verkauft, nach Art des Tickets
-SELECT TT."name", COUNT("Ticket") as Anzahl
+SELECT TT."name", COUNT("Ticket") as Count
 FROM "Ticket"
          JOIN "TicketType" TT on TT."idTicketType" = "Ticket"."ticketType_id"
 WHERE "validityDate" > TO_DATE('2019-01-01', 'YYYY-MM-DD')
 group by TT."name";
 
 --Ausgaben - Einnahmen Gegenrechnung
-WITH ZooEinnahmen AS (SELECT "zoo_id", sum(TT.price) as "Einnahmen"
+WITH ZooEinnahmen AS (SELECT "zoo_id", sum(TT.price) as Income
                       FROM "Ticket"
                                JOIN "TicketType" TT on TT."idTicketType" = "Ticket"."ticketType_id"
                       WHERE "validityDate" BETWEEN TO_DATE('2019-01-01', 'YYYY-MM-DD') and TO_DATE('2020-01-01', 'YYYY-MM-DD')
                       group by "zoo_id"),
-     ZooAusgabenFutter AS (SELECT "zoo_id", sum(F.price * "FeedingPlan".amount * 356) as "FutterAusgaben"
+     ZooAusgabenFutter AS (SELECT "zoo_id", sum(F.price * "FeedingPlan".amount * 356) as Feed_Expenses
                            FROM "FeedingPlan"
                                     JOIN "Feed" F on F."idFeed" = "FeedingPlan".feed_id
                                     JOIN "Animal" A on A."idAnimal" = "FeedingPlan".animal_id
                            group by "zoo_id"),
-     ZooAusgabenPersonal AS (SELECT "zoo_id", sum(J.salary) as "PersonalAusgaben"
+     ZooAusgabenPersonal AS (SELECT "zoo_id", sum(J.salary) as Personnel_Expenses
                              FROM "Employee"
                                       JOIN "Job" J on J."idJob" = "Employee".job_id
                              group by "zoo_id")
-SELECT "Zoo"."name", ZE."Einnahmen", ZAF."FutterAusgaben", ZAP."PersonalAusgaben", ZE."Einnahmen" - ZAF."FutterAusgaben" - ZAP."PersonalAusgaben" as gewinn
+SELECT "Zoo"."name" as Zoo_Name, ZE.Income, ZAF.Feed_Expenses, ZAP.Personnel_Expenses, ZE.Income - ZAF.Feed_Expenses - ZAP.Personnel_Expenses as profit
 FROM "Zoo"
          JOIN ZooEinnahmen ZE on "Zoo"."idZoo" = ZE."zoo_id"
          JOIN ZooAusgabenFutter ZAF on "Zoo"."idZoo" = ZAF."zoo_id"
@@ -29,7 +29,7 @@ FROM "Zoo"
 
 --Jan
 --Essen pro Gehege
-SELECT "idEnclosure", sum(FP.amount) AS feed_amount FROM "Enclosure"
+SELECT "idEnclosure" as Enclosure_ID, sum(FP.amount) AS feed_amount FROM "Enclosure"
 JOIN "Animal" A on "Enclosure"."idEnclosure" = A.enclosure_id
 JOIN "FeedingPlan" FP on A."idAnimal" = FP.animal_id
 GROUP BY "idEnclosure"
@@ -43,7 +43,7 @@ GROUP BY S.name
 ORDER BY average DESC;
 
 --Platz pro Tier im Gehege
-SELECT "idEnclosure", round(area/count(A), 2) AS area_per_animal FROM "Enclosure"
+SELECT "idEnclosure" as Enclosure_ID, round(area/count(A), 2) AS area_per_animal FROM "Enclosure"
 JOIN "Animal" A on "Enclosure"."idEnclosure" = A.enclosure_id
 GROUP BY "idEnclosure"
 ORDER BY "idEnclosure";
@@ -57,14 +57,14 @@ WITH "EinnahmenTickets" AS (select Z."name" AS "Zooname", TT."idTicketType" AS "
                             WHERE "validityDate" BETWEEN TO_DATE('2019-01-01', 'YYYY-MM-DD') and TO_DATE('2019-02-01', 'YYYY-MM-DD')
                             GROUP BY Z."name", TT."idTicketType", TT.price)
 
-select "EinnahmenTickets"."Zooname", TT."name", "EinnahmenTickets"."SummeInEuro"
+select "EinnahmenTickets"."Zooname" as Zoo_Name, TT."name", "EinnahmenTickets"."SummeInEuro" as Summe_In_Euro
 From "EinnahmenTickets"  inner join "TicketType" TT on TT."idTicketType" = "EinnahmenTickets"."TicketType"
 GROUP BY TT."name", "EinnahmenTickets"."Zooname", "EinnahmenTickets"."SummeInEuro"
 ORDER BY "EinnahmenTickets"."Zooname", "SummeInEuro" DESC;
 
 
 --Welcher Tierpfleger betreut wie viele Tiere
-Select E.firstname, E.lastname, E."idEmployee", count(A."idAnimal")
+Select E.firstname, E.lastname, E."idEmployee" as Employee_ID, count(A."idAnimal")
 from  ("Employee" E join "FeedingPlan" FP on E."idEmployee" = FP.employee_id)  join "Animal" A on A."idAnimal" = FP.animal_id
 Where E.job_id = 2
 GROUP BY E.firstname, E.lastname, E."idEmployee";

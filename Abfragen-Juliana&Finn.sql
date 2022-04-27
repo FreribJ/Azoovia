@@ -22,3 +22,5 @@ GROUP BY E.firstname, E.lastname, E."idEmployee";
 Select S.name, sum (F.price*FP.amount)
 From (("Species" S Join "Animal" A on S."idSpecies" = A.species_id) join "FeedingPlan" FP on "idAnimal" = FP.animal_id) Join "Feed" F on F."idFeed" = FP.feed_id
 group by S.name;
+
+--Einnahmen pro Altersgruppe

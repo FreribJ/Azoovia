@@ -11,4 +11,6 @@ select "Animal"."name", "FeedingPlan".amount
 from "Animal"
 full join "FeedingPlan" on "idAnimal" = "FeedingPlan"."animal_id";
 
-
+select feed_id
+from "FeedingPlan"
+where feed_id between 2 and 4

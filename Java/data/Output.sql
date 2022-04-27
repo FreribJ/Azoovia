@@ -92,15 +92,20 @@ values (3, '8050');
 
 --Zoos: 
 insert into "Zoo"("name", "address")
-values ('Estefania-Zoo', 'Ludwigstraße 175');
+values ('Estefania-Zoo', 'Ludwigstraße
+ 175');
 insert into "Zoo"("name", "address")
-values ('Teresa-Zoo', 'Schwarzer Weg 174');
+values ('Teresa-Zoo', 'Schwarzer Weg
+ 174');
 insert into "Zoo"("name", "address")
-values ('Dwayne-Zoo', 'Sudetenstraße 76');
+values ('Dwayne-Zoo', 'Sudetenstraße
+ 76');
 insert into "Zoo"("name", "address")
-values ('Paula-Zoo', 'Königsberger Straße 39');
+values ('Paula-Zoo', 'Königsberger Straße
+ 39');
 insert into "Zoo"("name", "address")
-values ('Ioana-Zoo', 'Robert-Bosch-Straße 182');
+values ('Ioana-Zoo', 'Robert-Bosch-Straße
+ 182');
 
 --Animals: 
 insert into "Animal"("zoo_id", "enclosure_id", "species_id", "name", "age", "sex")
@@ -284,55 +289,80 @@ values ('Tourguide', 5746);
 
 --Employee: 
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (1, 5, 'Nora', 'Schindler', 'Friedhofsweg 111', 'Nora.Schindler@hsw-stud.de', 24, '2019-8-24');
+values (1, 5, 'Nora', 'Schindler', 'Friedhofsweg
+ 111', 'Nora.Schindler@hsw-stud.de', 24, '2019-8-24');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (2, 3, 'Julie', 'Kaufmann', 'Lindenweg 77', 'Julie.Kaufmann@hsw-stud.de', 24, '2017-4-4');
+values (2, 3, 'Julie', 'Kaufmann', 'Lindenweg
+ 77', 'Julie.Kaufmann@hsw-stud.de', 24, '2017-4-4');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (3, 2, 'Christopher', 'Lutz', 'Kirchplatz 163', 'Christopher.Lutz@hsw-stud.de', 26, '2019-12-21');
+values (3, 2, 'Christopher', 'Lutz', 'Kirchplatz
+ 163', 'Christopher.Lutz@hsw-stud.de', 26, '2019-12-21');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (4, 1, 'Berk', 'Kunz', 'Kirchberg 98', 'Berk.Kunz@hsw-stud.de', 32, '2020-5-19');
+values (4, 1, 'Berk', 'Kunz', 'Kirchberg
+ 98', 'Berk.Kunz@hsw-stud.de', 32, '2020-5-19');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (5, 5, 'Hafsa', 'Marx', 'Grenzweg 101', 'Hafsa.Marx@hsw-stud.de', 43, '2015-8-5');
+values (5, 5, 'Hafsa', 'Marx', 'Grenzweg
+ 101', 'Hafsa.Marx@hsw-stud.de', 43, '2015-8-5');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (4, 5, 'Yade', 'Berger', 'Mühlenweg 133', 'Yade.Berger@hsw-stud.de', 57, '1985-9-6');
+values (4, 5, 'Yade', 'Berger', 'Mühlenweg
+ 133', 'Yade.Berger@hsw-stud.de', 57, '1985-9-6');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (4, 3, 'Paolo', 'Berger', 'Bismarckstraße 146', 'Paolo.Berger@hsw-stud.de', 51, '1997-10-12');
+values (4, 3, 'Paolo', 'Berger', 'Bismarckstraße
+ 146', 'Paolo.Berger@hsw-stud.de', 51, '1997-10-12');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (2, 5, 'Lola', 'Mayer', 'Bahnhofstraße 58', 'Lola.Mayer@hsw-stud.de', 22, '2018-12-3');
+values (2, 5, 'Lola', 'Mayer', 'Bahnhofstraße
+ 58', 'Lola.Mayer@hsw-stud.de', 22, '2018-12-3');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (3, 2, 'Beren', 'Lenz', 'Friedhofsweg 53', 'Beren.Lenz@hsw-stud.de', 48, '2003-12-12');
+values (3, 2, 'Beren', 'Lenz', 'Friedhofsweg
+ 53', 'Beren.Lenz@hsw-stud.de', 48, '2003-12-12');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (1, 3, 'Elsa', 'Krüger', 'Teichstraße 172', 'Elsa.Krüger@hsw-stud.de', 73, '2010-4-18');
+values (1, 3, 'Elsa', 'Krüger', 'Teichstraße
+ 172', 'Elsa.Krüger@hsw-stud.de', 73, '2010-4-18');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (3, 5, 'Mara', 'Mohr', 'Alte Dorfstraße 82', 'Mara.Mohr@hsw-stud.de', 20, '2021-3-25');
+values (3, 5, 'Mara', 'Mohr', 'Alte Dorfstraße
+ 82', 'Mara.Mohr@hsw-stud.de', 20, '2021-3-25');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (2, 5, 'Mattis', 'Richter', 'Bachstraße 127', 'Mattis.Richter@hsw-stud.de', 42, '2020-12-2');
+values (2, 5, 'Mattis', 'Richter', 'Bachstraße
+ 127', 'Mattis.Richter@hsw-stud.de', 42, '2020-12-2');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (1, 1, 'An', 'Reuter', 'Grenzweg 164', 'An.Reuter@hsw-stud.de', 28, '2018-10-5');
+values (1, 1, 'An', 'Reuter', 'Grenzweg
+ 164', 'An.Reuter@hsw-stud.de', 28, '2018-10-5');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (3, 2, 'Karim', 'Kramer', 'Starenweg 191', 'Karim.Kramer@hsw-stud.de', 24, '2016-10-1');
+values (3, 2, 'Karim', 'Kramer', 'Starenweg
+ 191', 'Karim.Kramer@hsw-stud.de', 24, '2016-10-1');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (5, 5, 'Nur', 'Albrecht', 'Asternweg 59', 'Nur.Albrecht@hsw-stud.de', 54, '2004-8-12');
+values (5, 5, 'Nur', 'Albrecht', 'Asternweg
+ 59', 'Nur.Albrecht@hsw-stud.de', 54, '2004-8-12');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (1, 1, 'Lucy', 'Hoppe', 'Oststraße 172', 'Lucy.Hoppe@hsw-stud.de', 55, '2020-5-22');
+values (1, 1, 'Lucy', 'Hoppe', 'Oststraße
+ 172', 'Lucy.Hoppe@hsw-stud.de', 55, '2020-5-22');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (1, 3, 'Lukas', 'Reuter', 'Birkenstraße 170', 'Lukas.Reuter@hsw-stud.de', 33, '2015-6-28');
+values (1, 3, 'Lukas', 'Reuter', 'Birkenstraße
+ 170', 'Lukas.Reuter@hsw-stud.de', 33, '2015-6-28');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (2, 5, 'Fabio', 'Lenz', 'Gartenweg 115', 'Fabio.Lenz@hsw-stud.de', 67, '1997-10-13');
+values (2, 5, 'Fabio', 'Lenz', 'Gartenweg
+ 115', 'Fabio.Lenz@hsw-stud.de', 67, '1997-10-13');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (2, 2, 'Jolina', 'Sommer', 'Daimlerstraße 196', 'Jolina.Sommer@hsw-stud.de', 22, '2019-4-18');
+values (2, 2, 'Jolina', 'Sommer', 'Daimlerstraße
+ 196', 'Jolina.Sommer@hsw-stud.de', 22, '2019-4-18');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (4, 2, 'Miraç', 'Meier', 'Nelkenweg 165', 'Miraç.Meier@hsw-stud.de', 38, '2015-3-13');
+values (4, 2, 'Miraç', 'Meier', 'Nelkenweg
+ 165', 'Miraç.Meier@hsw-stud.de', 38, '2015-3-13');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (4, 4, 'Ole', 'Frank', 'Im Wiesengrund 39', 'Ole.Frank@hsw-stud.de', 74, '2021-9-16');
+values (4, 4, 'Ole', 'Frank', 'Im Wiesengrund
+ 39', 'Ole.Frank@hsw-stud.de', 74, '2021-9-16');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (5, 3, 'Franz', 'Kühn', 'Parkstraße 98', 'Franz.Kühn@hsw-stud.de', 35, '2005-5-20');
+values (5, 3, 'Franz', 'Kühn', 'Parkstraße
+ 98', 'Franz.Kühn@hsw-stud.de', 35, '2005-5-20');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (5, 1, 'Til', 'Vogel', 'Feldweg 34', 'Til.Vogel@hsw-stud.de', 45, '2006-5-6');
+values (5, 1, 'Til', 'Vogel', 'Feldweg
+ 34', 'Til.Vogel@hsw-stud.de', 45, '2006-5-6');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (2, 5, 'Efe', 'Kuhn', 'Parkstraße 14', 'Efe.Kuhn@hsw-stud.de', 45, '2006-4-22');
+values (2, 5, 'Efe', 'Kuhn', 'Parkstraße
+ 14', 'Efe.Kuhn@hsw-stud.de', 45, '2006-4-22');
 insert into "Employee"("zoo_id", "job_id", "firstname", "lastname", "address", "email", "age", "hireDate")
-values (4, 4, 'Matthew', 'Fiedler', 'Tannenstraße 25', 'Matthew.Fiedler@hsw-stud.de', 65, '1982-9-26');
+values (4, 4, 'Matthew', 'Fiedler', 'Tannenstraße
+ 25', 'Matthew.Fiedler@hsw-stud.de', 65, '1982-9-26');
 
 --FeedingPlans: 
 insert into "FeedingPlan"("animal_id", "feed_id", "employee_id", "time", "amount")

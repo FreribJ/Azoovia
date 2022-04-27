@@ -4,7 +4,7 @@ FROM "Animal" A
 JOIN "Enclosure" E ON E."idEnclosure" = A.enclosure_id
 JOIN "Habitat" H1 ON E.habitat_id = H1."idHabitat"
 JOIN "Species" S ON S."idSpecies" = A.species_id
-JOIN "Habitat" H2 ON S.habitat_id = H2."idHabitat"
+JOIN "Habitat" H2 ON S.habitat_id = H2."idHabitat";
 
 -- Der Artengerechteste Zoo
 SELECT "Zoo"."name"
@@ -13,5 +13,5 @@ JOIN "Animal" A on "Zoo"."idZoo" = A.zoo_id
 JOIN "Enclosure" E on E."idEnclosure" = A.enclosure_id
 JOIN "Species" S on A.species_id = S."idSpecies"
 JOIN "Habitat" H1 ON E.habitat_id = H1."idHabitat"
-Join "Habitat" H2 ON S.habitat_id = H2."idHabitat"
+Join "Habitat" H2 ON S.habitat_id = H2."idHabitat";
 

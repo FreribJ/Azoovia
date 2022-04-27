@@ -5,7 +5,7 @@ JOIN "FeedingPlan" FP on A."idAnimal" = FP.animal_id
 GROUP BY "idEnclosure"
 ORDER BY "idEnclosure";
 
---Durchschnitt des Essen pro Spezie pro Tag
+--Durchschnitt des Essen pro Spezies pro Tag
 SELECT S.name, round(avg(amount), 2) AS average FROM "FeedingPlan"
 JOIN "Animal" A on A."idAnimal" = "FeedingPlan".animal_id
 JOIN "Species" S on S."idSpecies" = A.species_id

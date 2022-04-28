@@ -60,6 +60,7 @@ FROM "Visitor"
          JOIN "TicketType" TT on TT."idTicketType" = T."ticketType_id"
 GROUP BY age
 ORDER BY age;
+
 --TopTicket
 select Z."name"                         AS Zoo_Name,
        TT."name"                        AS Ticket_Name,

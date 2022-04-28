@@ -61,22 +61,6 @@ FROM "Visitor"
 GROUP BY age
 ORDER BY age;
 --TopTicket
-WITH "EinnahmenTickets" AS (select Z."name"                         AS Zoo_Name,
-                                   TT."idTicketType"                AS Ticket_Type,
-                                   (count(T."idTicket") * TT.price) AS Sum_in_Euro
-                            from ("Zoo" Z
-                                inner join "Ticket" T on Z."idZoo" = T.zoo_id)
-                                     inner join "TicketType" TT on TT."idTicketType" = T."ticketType_id"
-                            WHERE "validityDate" BETWEEN TO_DATE('2019-01-01', 'YYYY-MM-DD') and TO_DATE('2020-01-01', 'YYYY-MM-DD')
-                            GROUP BY Z."idZoo", TT."idTicketType", TT.price)
-
-select "EinnahmenTickets".Zoo_Name, TT."name" as Ticket_Name, "EinnahmenTickets".Sum_in_Euro
-From "EinnahmenTickets"
-         inner join "TicketType" TT on TT."idTicketType" = "EinnahmenTickets".Ticket_Type
-GROUP BY TT."idTicketType", "EinnahmenTickets".Zoo_Name, "EinnahmenTickets".Sum_in_Euro
-ORDER BY "EinnahmenTickets".Zoo_Name, Sum_in_Euro DESC;
-
-
 select Z."name"                         AS Zoo_Name,
        TT."name"                        AS Ticket_Name,
        (count(T."idTicket") * TT.price) AS Sum_in_Euro

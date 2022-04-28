@@ -3,7 +3,7 @@ SELECT TT."name", COUNT("Ticket") as count
 FROM "Ticket"
          JOIN "TicketType" TT on TT."idTicketType" = "Ticket"."ticketType_id"
 WHERE "validityDate" > TO_DATE('2019-01-01', 'YYYY-MM-DD')
-group by TT."name";
+group by TT."idTicketType";
 
 --Ausgaben - Einnahmen Gegenrechnung
 WITH ZooEinnahmen AS (SELECT "zoo_id", sum(TT.price) as Income
@@ -43,7 +43,7 @@ SELECT S.name, round(avg(amount), 2) AS average
 FROM "FeedingPlan"
          JOIN "Animal" A on A."idAnimal" = "FeedingPlan".animal_id
          JOIN "Species" S on S."idSpecies" = A.species_id
-GROUP BY S.name
+GROUP BY S."idSpecies"
 ORDER BY average DESC;
 
 --Platz pro Tier im Gehege
@@ -68,12 +68,12 @@ WITH "EinnahmenTickets" AS (select Z."name"                         AS Zoo_Name,
                                 inner join "Ticket" T on Z."idZoo" = T.zoo_id)
                                      inner join "TicketType" TT on TT."idTicketType" = T."ticketType_id"
                             WHERE "validityDate" BETWEEN TO_DATE('2019-01-01', 'YYYY-MM-DD') and TO_DATE('2020-01-01', 'YYYY-MM-DD')
-                            GROUP BY Z."name", TT."idTicketType", TT.price)
+                            GROUP BY Z."idZoo", TT."idTicketType", TT.price)
 
 select "EinnahmenTickets".Zoo_Name, TT."name" as Ticket_Name, "EinnahmenTickets".Sum_in_Euro
 From "EinnahmenTickets"
          inner join "TicketType" TT on TT."idTicketType" = "EinnahmenTickets".Ticket_Type
-GROUP BY TT."name", "EinnahmenTickets".Zoo_Name, "EinnahmenTickets".Sum_in_Euro
+GROUP BY TT."idTicketType", "EinnahmenTickets".Zoo_Name, "EinnahmenTickets".Sum_in_Euro
 ORDER BY "EinnahmenTickets".Zoo_Name, Sum_in_Euro DESC;
 
 --Welcher Tierpfleger betreut wie viele Tiere
@@ -81,13 +81,13 @@ Select E.firstname, E.lastname, count(A."idAnimal")
 from ("Employee" E join "FeedingPlan" FP on E."idEmployee" = FP.employee_id)
          join "Animal" A on A."idAnimal" = FP.animal_id
 Where E.job_id = 2
-GROUP BY E.firstname, E.lastname, E."idEmployee";
+GROUP BY E."idEmployee";
 
 -- Pro Species die Kosten des Essens pro Tag
 Select S.name as Species_Name, sum(F.price * FP.amount)
 From (("Species" S Join "Animal" A on S."idSpecies" = A.species_id) join "FeedingPlan" FP on "idAnimal" = FP.animal_id)
          Join "Feed" F on F."idFeed" = FP.feed_id
-group by S.name;
+group by S."idSpecies";
 
 -- Artgerechtheit
 SELECT A."name",
@@ -122,5 +122,5 @@ FROM "Animal" A
          JOIN "Habitat" H2 ON S.habitat_id = H2."idHabitat"
          JOIN "Zoo" Z on A.zoo_id = Z."idZoo"
 WHERE H1."idHabitat" = H2."idHabitat"
-group by Z."name"
+group by Z."idZoo"
 ORDER BY Species_appropriately_held_animals;

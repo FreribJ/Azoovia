@@ -91,6 +91,7 @@ group by S."idSpecies";
 
 -- Artgerechtheit
 SELECT A."name",
+       S."name"                        AS Species_Name,
        H1."name"                       AS Enclosure_Habitat,
        H2."name"                       AS Species_Habitat,
        H1."idHabitat" = H2."idHabitat" AS Species_Appropriate
@@ -102,6 +103,7 @@ FROM "Animal" A
 
 -- Artgerechtheit II
 SELECT A."name",
+       S."name"                        AS Species_Name,
        H1."name"                       AS Enclosure_Habitat,
        H2."name"                       AS Species_Habitat,
        H1."idHabitat" = H2."idHabitat" AS Species_Appropriate,

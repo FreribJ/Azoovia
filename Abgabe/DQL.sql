@@ -62,7 +62,7 @@ GROUP BY age
 ORDER BY age;
 
 --TopTicket
-select Z."name"                         AS Zoo_Name,
+select distinct on (Z.name)Z."name"                         AS Zoo_Name,
        TT."name"                        AS Ticket_Name,
        (count(T."idTicket") * TT.price) AS Sum_in_Euro
 from ("Zoo" Z
